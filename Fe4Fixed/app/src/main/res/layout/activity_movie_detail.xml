@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/scrollLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="36dp"
+        tools:context=".MovieDetailActivity">
+
+        <ImageView
+            android:id="@+id/arrowDetailed"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/arrow"
+            android:clickable="true"
+            app:tint="@color/colorText" />
+
+        <ImageView
+            android:id="@+id/posterDetailed"
+            android:layout_width="192dp"
+            android:layout_height="256dp"
+            android:layout_below="@+id/arrowDetailed"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_android_24" />
+
+        <ImageView
+            android:id="@+id/backdropDetailed"
+            android:layout_width="192dp"
+            android:layout_height="256dp"
+            android:layout_below="@+id/arrowDetailed"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_android_24"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/titleDetailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/posterDetailed"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@+id/posterDetailed"
+            android:gravity="center"
+            android:text="Title"
+            android:textColor="@color/colorText"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/yearDetailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDetailed"
+            android:layout_alignStart="@+id/titleDetailed"
+            android:layout_alignEnd="@+id/titleDetailed"
+            android:layout_toLeftOf="@+id/posterDetailed"
+            android:gravity="center"
+            android:text="Year" />
+
+        <LinearLayout
+            android:id="@+id/ratingLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yearDetailed"
+            android:layout_alignEnd="@+id/yearDetailed"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="# Votes"
+                    android:textColor="@color/colorText" />
+
+                <TextView
+                    android:id="@+id/numVotesDetailed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="3829" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Rating"
+                    android:textColor="@color/colorText" />
+
+                <TextView
+                    android:id="@+id/ratingDetailed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="8.7" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingLayout"
+            android:layout_alignEnd="@+id/yearDetailed"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget" />
+
+            <TextView
+                android:id="@+id/budgetDetailed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budget"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revenue" />
+
+            <TextView
+                android:id="@+id/revenueDetailed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revenue"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/overviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/posterDetailed"
+            android:text="Overview"
+            android:textColor="@color/colorText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/overviewDetailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/overviewTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:text="jaskjdklasdj klasdjklasd jklasjdaklsdj kladjklas jdk lasj lkas dj kldjaskl jdalsk jdklasjldkasjdklasjadklsjaklsdjaskldj" />
+
+        <TextView
+            android:id="@+id/genreTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/overviewDetailed"
+            android:layout_marginTop="8dp"
+            android:text="Genre(s)"
+            android:textColor="@color/colorText"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/genreDetailed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genreTitle"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:text="jaskjdklasdj klasdjklasd jklasjdaklsdj kladjklas jdk lasj lkas dj kldjaskl jdalsk jdklasjldkasjdklasjadklsjaklsdjaskldj" />
+
+
+        <TextView
+            android:id="@+id/actorTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/genreDetailed"
+            android:layout_marginTop="8dp"
+            android:text="Starring"
+            android:textColor="@color/colorText"
+            android:textSize="20dp" />
+
+        <ListView
+            android:id="@+id/actorsList"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/actorTitle"
+            android:visibility="visible"
+            android:nestedScrollingEnabled="true"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>
