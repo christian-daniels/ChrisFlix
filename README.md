@@ -15,5 +15,6 @@ The gateway service acts as a queue handler for requests. Requests are sent to t
 
 ## Frontend
 I created two interfaces to display the information retrieved from the backend services in the form of a web page (created in React) and an mobile phone application (created in Android Studio). Below you can watch the demos for them.
+
 [![WEB DEMO](http://img.youtube.com/vi/McPVB3qV26c/0.jpg)](http://www.youtube.com/watch?v=McPVB3qV26c "ChrisFlix Web Demonstration")
 [![ANDROID DEMO](http://img.youtube.com/vi/7BrR9RtMFto/0.jpg)](http://www.youtube.com/watch?v=7BrR9RtMFto "ChrisFlix Android Demonstration")
