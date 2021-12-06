@@ -1,0 +1,682 @@
+[2021/03/19 13:14:20][CONFIG][initService]  Starting service...
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Scheme: http://
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Port: 12346
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Path: /api/idm
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database hostname: localhost
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database port: 3306
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database username: root
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database password provided? true
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database name: idm
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Timeout: 600000
+[2021/03/19 13:14:20][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2021/03/19 13:14:20][CONFIG][connectToDatabase]  Connecting to database...
+[2021/03/19 13:14:20][CONFIG][connectToDatabase]  Database URL: jdbc:mysql://localhost:3306/idm?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2021/03/19 13:14:20][CONFIG][connectToDatabase]  Connected to database: jdbc:mysql://localhost:3306/idm?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Building URI from configs...
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:12346/api/idm
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Set Jersey resources.
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Set session timeout and token expiration.
+[2021/03/19 13:14:20][CONFIG][initHTTPServer]  Starting HTTP server...
+[2021/03/19 13:14:21][CONFIG][initHTTPServer]  HTTP server started.
+[2021/03/19 13:14:21][CONFIG][initService]  Service initialized.
+[2021/03/19 13:15:01][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'anewuser@uci.edu' ;
+[2021/03/19 13:15:01][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:15:01][INFO][isUserInDBReturn]  Retrieved user: (24,anewuser@uci.edu )
+[2021/03/19 13:15:01][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:15:01][WARNING][userLogin]  Passwords do not match
+[2021/03/19 13:16:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'doesnotexist@uci.edu' ;
+[2021/03/19 13:16:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:16:17][WARNING][userLogin]  User not found
+[2021/03/19 13:16:35][INFO][isUserInDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email FROM user WHERE email LIKE 'androidtest@uci.edu' ;
+[2021/03/19 13:16:35][INFO][isUserInDB]  Query succeeded.
+[2021/03/19 13:16:35][INFO][insertNewUserRecord]  Trying insertion: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user (email, status, plevel, salt, pword) VALUE ('androidtest@uci.edu', 1, 5, 'e0bfa623', 'cd785127bef6b342a73a9e6b3864059e54008d323498eb81aa287d949e728c4ffad63b4bbca8ce2ba6162a3e0f391d981020884e5c64c73b3f9c47b45bd4bc3a')
+[2021/03/19 13:16:35][INFO][insertNewUserRecord]  Insertion succeeded.
+[2021/03/19 13:16:35][INFO][createUser]  Received request for register
+[2021/03/19 13:16:35][INFO][createUser]  Request:
+{"email":"androidtest@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:17:59][INFO][isUserInDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:17:59][INFO][isUserInDB]  Query succeeded.
+[2021/03/19 13:17:59][INFO][insertNewUserRecord]  Trying insertion: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user (email, status, plevel, salt, pword) VALUE ('androidtest2@uci.edu', 1, 5, 'f2e88206', '38965a9bd012b0a3c2a19059a62a60a6a9f6fc67b8eb06e98b8e40e3519444073e39a7e137518a92df2012c7e62cf353b6e09ba140cb8190dc4402f9c67caed4')
+[2021/03/19 13:17:59][INFO][insertNewUserRecord]  Insertion succeeded.
+[2021/03/19 13:17:59][INFO][createUser]  Received request for register
+[2021/03/19 13:17:59][INFO][createUser]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:19:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:19:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:19:17][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:19:17][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:19:17][WARNING][userLogin]  Passwords do not match
+[2021/03/19 13:20:07][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'somerandom@uci.edu' ;
+[2021/03/19 13:20:07][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:20:07][WARNING][userLogin]  User not found
+[2021/03/19 13:20:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:20:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:20:17][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:20:17][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:20:17][WARNING][userLogin]  Passwords do not match
+[2021/03/19 13:20:27][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:20:27][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:20:27][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:20:27][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:20:27][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:20:27][INFO][userLogin]  Received request for login
+[2021/03/19 13:20:27][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:20:27][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:20:27][INFO][insertNewUserSession]  Removal succeeded. affected 0 rows
+[2021/03/19 13:20:27][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('b02e04777d7084579a5ca0212a03e21c600173d1e3e8c3e5ac3679cb22ec888ea9dca071ecc099210c29a843bf7d39283e231779ccb06e8f64ba364a02bff066', 'androidtest2@uci.edu', 4, '2021-03-19 13:20:27.043', '2021-03-19 13:20:27.043', '2021-03-19 13:50:27.043')
+[2021/03/19 13:20:27][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 13:32:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:32:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:32:17][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:32:17][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:32:17][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:32:17][INFO][userLogin]  Received request for login
+[2021/03/19 13:32:17][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:32:17][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:32:17][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 13:32:17][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('14af6d51a4e63d8a736cea8c513e24413e147f25e0efa70fc5827f2d5912c07f8bd6518f470e58029da6223de4eae7a77045e48c914b79b27061b871a06b85d7', 'androidtest2@uci.edu', 1, '2021-03-19 13:32:17.044', '2021-03-19 13:32:17.044', '2021-03-19 14:02:17.044')
+[2021/03/19 13:32:17][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 13:45:57][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:45:57][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:45:57][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:45:57][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:45:57][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:45:57][INFO][userLogin]  Received request for login
+[2021/03/19 13:45:57][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:45:57][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:45:57][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 13:45:57][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('4811c94c56d446e7de08065aec7ededa93e36ce96fbbbddae5678332037d750f3c710b5c68d4f6fac7e7a64ea80e2b170b6ed8097cdc817d7f6838b238d7cc3d', 'androidtest2@uci.edu', 1, '2021-03-19 13:45:57.678', '2021-03-19 13:45:57.678', '2021-03-19 14:15:57.678')
+[2021/03/19 13:45:57][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 13:46:32][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:46:32][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:46:32][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:46:32][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:46:32][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:46:32][INFO][userLogin]  Received request for login
+[2021/03/19 13:46:32][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:46:32][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:46:32][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 13:46:32][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('7615f2151a3b4e52c498fe10218509145206a62b06cd9f10adad3c0e0709f48a0d2c811a1bbb24f4e8a5cbd6601ec13bea35c5925acb530ffd35402a71b4d208', 'androidtest2@uci.edu', 1, '2021-03-19 13:46:32.643', '2021-03-19 13:46:32.643', '2021-03-19 14:16:32.643')
+[2021/03/19 13:46:32][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 13:46:52][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:46:52][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:46:52][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:46:52][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:46:52][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:46:52][INFO][userLogin]  Received request for login
+[2021/03/19 13:46:52][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:46:52][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:46:52][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 13:46:52][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('d4e539f2edb9abe8d6ea5e6ad62176eae41b3542d7e2b89834965a2ace899e1b9c329bfb5554c53a25f6cf37581179d6dfc7d0b3871b7331519afc4b305ada91', 'androidtest2@uci.edu', 1, '2021-03-19 13:46:52.65', '2021-03-19 13:46:52.65', '2021-03-19 14:16:52.65')
+[2021/03/19 13:46:52][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 13:47:35][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 13:47:35][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 13:47:35][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 13:47:35][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 13:47:35][WARNING][userLogin]  Passwords matched
+[2021/03/19 13:47:35][INFO][userLogin]  Received request for login
+[2021/03/19 13:47:35][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 13:47:35][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 13:47:35][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 13:47:35][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('8e32956f0fd03643f6b2eb64638b62cff354b37bca4e42cc366d6706e4bad2b2f705012117516eb79790e66e76ff7ce6e88d8c3427254879f9dbedd1007cff05', 'androidtest2@uci.edu', 1, '2021-03-19 13:47:35.476', '2021-03-19 13:47:35.476', '2021-03-19 14:17:35.476')
+[2021/03/19 13:47:35][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 14:19:48][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 14:19:48][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:19:48][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 14:19:48][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:19:48][WARNING][userLogin]  Passwords matched
+[2021/03/19 14:19:48][INFO][userLogin]  Received request for login
+[2021/03/19 14:19:48][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 14:19:48][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 14:19:48][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 14:19:48][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('6cd3ccd9ddfe1d61162f2cbec80cb990759d074ab9983c631e302c43b9cd29ac297548970f2958a30781fee5ceba09b758f163a2ccddf509e0cd6c14fff9cf6d', 'androidtest2@uci.edu', 1, '2021-03-19 14:19:48.155', '2021-03-19 14:19:48.155', '2021-03-19 14:49:48.155')
+[2021/03/19 14:19:48][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 14:22:36][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 14:22:36][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:22:36][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 14:22:36][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:22:36][WARNING][userLogin]  Passwords matched
+[2021/03/19 14:22:36][INFO][userLogin]  Received request for login
+[2021/03/19 14:22:36][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 14:22:36][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 14:22:36][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 14:22:36][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('5d9373641bcc13a77508ee8d4046604e726546d1dc2126e9c1ec4671868eb6c4351758b005967d945ee0d46b9955a993728d9cb1fd0c4b44b78acce9c9930fd3', 'androidtest2@uci.edu', 1, '2021-03-19 14:22:36.995', '2021-03-19 14:22:36.995', '2021-03-19 14:52:36.995')
+[2021/03/19 14:22:37][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 14:24:16][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'androidtest2@uci.edu' ;
+[2021/03/19 14:24:16][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:24:16][INFO][isUserInDBReturn]  Retrieved user: (28,androidtest2@uci.edu )
+[2021/03/19 14:24:16][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:24:16][WARNING][userLogin]  Passwords matched
+[2021/03/19 14:24:16][INFO][userLogin]  Received request for login
+[2021/03/19 14:24:16][INFO][userLogin]  Request:
+{"email":"androidtest2@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 14:24:16][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'androidtest2@uci.edu'
+[2021/03/19 14:24:16][INFO][insertNewUserSession]  Removal succeeded. affected 1 rows
+[2021/03/19 14:24:16][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('45a906e4d8b034707352708077ff7cd55c09bcc95a29f0b4582b85eb1672b9d69f35c829a0530ae0198f95240575983732974baca4b7324ae8bd58dce07295bf', 'androidtest2@uci.edu', 1, '2021-03-19 14:24:16.325', '2021-03-19 14:24:16.325', '2021-03-19 14:54:16.325')
+[2021/03/19 14:24:16][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 14:31:10][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 14:31:10][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 14:31:10][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:31:10][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 14:31:10][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:31:47][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 14:31:47][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 14:31:47][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:31:47][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 14:31:47][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:32:15][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 14:32:15][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 14:32:15][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:32:15][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 14:32:15][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:32:51][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 14:32:51][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 14:32:51][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:32:51][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 14:32:51][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 14:35:20][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 14:35:20][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 14:35:20][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 14:35:20][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 14:35:20][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:09:43][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:09:43][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:09:43][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:09:43][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:09:43][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:16:19][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:16:19][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:16:19][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:16:19][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:16:19][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:17:37][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:17:37][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:17:37][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:17:37][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:17:37][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:18:17][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:18:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:18:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:18:17][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:18:17][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:19:00][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:19:00][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:19:00][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:19:00][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:19:00][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:19:24][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:19:24][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:19:24][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:19:24][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:19:24][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:23:53][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:23:53][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:23:53][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:23:53][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:23:53][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:24:22][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:24:22][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:24:22][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:24:22][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:24:22][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:24:38][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:24:38][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:24:38][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:24:38][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:24:38][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:25:25][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:25:25][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:25:25][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:25:25][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:25:25][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:26:24][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:26:24][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:26:24][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:26:24][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:26:24][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:26:50][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:26:50][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:26:50][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:26:50][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:26:50][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:29:16][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:29:16][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:29:16][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:29:16][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:29:16][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:29:26][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:29:26][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:29:26][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:29:26][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:29:26][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:30:07][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:30:07][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:30:07][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:30:07][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:30:07][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:30:42][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:30:42][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:30:42][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:30:42][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:30:42][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:30:54][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:30:54][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:30:54][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:30:54][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:30:54][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:32:41][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:32:41][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:32:41][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:32:41][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:32:41][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:51:31][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:51:31][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:51:31][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:51:31][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:51:31][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:52:14][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:52:14][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:52:14][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:52:14][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:52:14][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:54:40][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:54:40][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:54:40][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:54:40][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:54:40][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:56:17][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:56:17][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:56:17][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:56:17][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:56:17][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:58:04][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:58:04][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:58:04][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:58:04][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:58:04][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:59:07][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:59:07][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:59:07][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:59:07][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:59:07][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 15:59:38][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 15:59:38][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 15:59:38][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 15:59:38][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 15:59:38][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:00:30][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:00:30][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:00:30][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:00:30][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:00:30][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:00:41][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:00:41][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:00:41][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:00:41][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:00:41][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:01:08][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:01:08][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:01:08][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:01:08][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:01:08][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:01:48][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:01:48][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:01:48][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:01:48][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:01:48][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:06:09][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:06:09][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:06:09][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:06:09][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:06:09][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:06:35][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:06:35][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:06:35][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:06:35][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:06:35][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:08:14][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:08:14][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:08:14][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:08:14][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:08:14][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:16:59][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:16:59][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:16:59][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:16:59][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:16:59][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:18:28][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:18:28][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:18:28][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:18:28][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:18:28][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:19:37][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:19:37][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:19:37][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:19:37][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:19:37][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:20:01][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:20:01][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:20:01][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:20:01][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:20:01][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:35:54][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:35:54][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:35:54][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:35:54][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:35:54][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:36:42][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:36:42][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:36:42][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:36:42][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:36:42][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:36:54][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:36:54][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:36:54][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:36:54][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:36:54][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:36:56][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:36:56][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:36:56][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:36:56][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:36:56][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:36:59][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:36:59][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:36:59][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:36:59][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:36:59][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:40:29][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:40:29][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:40:29][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:40:29][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:40:29][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:40:34][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:40:34][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:40:34][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:40:34][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:40:34][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:40:49][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:40:49][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:40:49][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:40:49][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:40:49][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 16:40:53][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 16:40:53][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 16:40:53][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 16:40:53][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 16:40:53][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:04:18][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:04:18][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:04:18][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:04:18][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:04:18][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:04:21][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:04:21][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:04:21][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:04:21][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:04:21][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:04:45][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:04:45][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:04:45][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:04:45][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:04:45][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:05:00][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:05:00][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:05:00][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:05:00][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:05:00][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:05:50][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:05:50][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:05:50][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:05:50][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:05:50][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:08:12][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:08:12][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:08:12][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:08:12][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:08:12][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:08:15][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:08:15][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:08:15][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:08:15][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:08:15][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:08:42][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:08:42][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:08:42][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:08:42][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:08:42][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:08:45][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:08:45][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:08:45][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:08:45][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:08:45][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:23:15][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:23:15][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:23:15][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:23:15][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:23:15][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:23:20][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:23:20][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:23:20][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:23:20][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:23:20][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:24:02][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:24:02][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:24:02][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:24:02][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:24:02][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:24:06][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:24:06][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:24:06][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:24:06][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:24:06][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:29:24][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:29:24][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:29:24][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:29:24][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:29:24][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:29:31][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:29:31][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:29:31][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:29:31][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:29:31][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:30:24][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:30:24][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:30:24][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:30:24][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:30:24][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:30:31][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:30:31][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:30:31][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:30:31][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:30:31][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:49:41][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:49:41][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:49:41][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:49:41][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:49:41][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:49:46][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:49:46][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:49:46][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:49:46][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:49:46][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:50:59][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:50:59][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:50:59][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:50:59][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:50:59][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:51:03][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:51:03][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:51:03][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:51:03][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:51:03][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:53:01][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:53:01][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:53:01][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:53:01][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:53:01][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:53:04][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:53:04][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:53:04][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:53:04][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:53:04][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:53:25][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:53:25][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:53:25][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:53:25][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:53:25][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:53:30][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:53:30][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:53:30][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:53:30][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:53:30][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:54:41][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:54:41][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:54:41][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:54:41][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:54:41][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:54:44][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:54:44][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:54:44][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:54:44][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:54:44][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:55:47][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:55:47][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:55:47][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:55:47][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:55:47][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:55:52][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:55:52][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:55:52][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:55:52][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:55:52][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:57:29][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:57:29][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:57:29][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:57:29][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:57:29][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:57:34][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:57:34][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:57:34][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:57:34][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:57:34][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:57:37][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:57:37][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:57:37][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:57:37][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:57:37][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:57:41][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:57:41][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:57:41][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:57:41][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:57:41][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:58:15][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:58:15][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:58:15][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:58:15][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:58:15][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:58:19][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:58:19][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:58:19][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:58:19][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:58:19][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 17:59:57][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 17:59:57][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 17:59:57][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 17:59:57][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 17:59:57][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:00:13][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:00:13][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:00:13][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:00:13][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:00:13][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:02:24][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:02:24][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:02:24][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:02:24][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:02:24][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:02:29][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:02:29][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:02:29][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:02:29][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:02:29][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:09:10][INFO][isUserInDB]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email FROM user WHERE email LIKE 'fabflixandroid@uci.edu' ;
+[2021/03/19 18:09:10][INFO][isUserInDB]  Query succeeded.
+[2021/03/19 18:09:10][INFO][insertNewUserRecord]  Trying insertion: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO user (email, status, plevel, salt, pword) VALUE ('fabflixandroid@uci.edu', 1, 5, 'e3e091c6', '8d35a3ae33d40deae93354960b93b0d570e185532c7174a5652017f7c0cc69aacca8d954f4bf232480b1eba6ddf3be73bf4f8880794ea57f11c43fb641f73377')
+[2021/03/19 18:09:10][INFO][insertNewUserRecord]  Insertion succeeded.
+[2021/03/19 18:09:10][INFO][createUser]  Received request for register
+[2021/03/19 18:09:10][INFO][createUser]  Request:
+{"email":"fabflixandroid@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 18:09:34][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'somerandomacc@uci.edu' ;
+[2021/03/19 18:09:34][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:09:34][WARNING][userLogin]  User not found
+[2021/03/19 18:09:58][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'fabflixandroid@uci.edu' ;
+[2021/03/19 18:09:58][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:09:58][INFO][isUserInDBReturn]  Retrieved user: (29,fabflixandroid@uci.edu )
+[2021/03/19 18:09:58][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:09:58][WARNING][userLogin]  Passwords do not match
+[2021/03/19 18:10:05][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'fabflixandroid@uci.edu' ;
+[2021/03/19 18:10:05][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:05][INFO][isUserInDBReturn]  Retrieved user: (29,fabflixandroid@uci.edu )
+[2021/03/19 18:10:05][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:10:05][WARNING][userLogin]  Passwords matched
+[2021/03/19 18:10:05][INFO][userLogin]  Received request for login
+[2021/03/19 18:10:05][INFO][userLogin]  Request:
+{"email":"fabflixandroid@uci.edu","password":["E","x","a","m","p","l","e","1","2","3","!"]}
+[2021/03/19 18:10:05][INFO][insertNewUserSession]  Removing possible active sessions: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM session WHERE email = 'fabflixandroid@uci.edu'
+[2021/03/19 18:10:05][INFO][insertNewUserSession]  Removal succeeded. affected 0 rows
+[2021/03/19 18:10:05][INFO][insertNewUserSession]  Trying insertion into session: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO session (session_id, email, status, time_created, last_used, expr_time) VALUE ('6bdfed87194c0331ae90a595bb0cacba04b1604562069c150ba5c64a09513387621c762b839396cde4f5b53de767c5777ac13c1c79a7d5515dc850b9fe4a43c2', 'fabflixandroid@uci.edu', 4, '2021-03-19 18:10:05.103', '2021-03-19 18:10:05.103', '2021-03-19 18:40:05.103')
+[2021/03/19 18:10:05][INFO][insertNewUserSession]  Insertion succeeded.
+[2021/03/19 18:10:16][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:10:16][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:10:16][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:16][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:10:16][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:10:27][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:10:27][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:10:27][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:27][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:10:27][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:10:35][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:10:35][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:10:35][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:35][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:10:35][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:10:46][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:10:46][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:10:46][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:46][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:10:46][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:10:57][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:10:57][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:10:57][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:10:57][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:10:57][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:11:03][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:11:03][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:11:03][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:11:03][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:11:03][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:11:05][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:11:05][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:11:05][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:11:05][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:11:05][INFO][isUserInDBReturn]  Email in database, Returning USER
+[2021/03/19 18:11:15][INFO][verifyPrivilege]  running privilege endpt
+[2021/03/19 18:11:15][INFO][isUserInDBReturn]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT user_id, email, status, plevel, salt, pword FROM user WHERE email LIKE 'finalaccount@uci.edu' ;
+[2021/03/19 18:11:15][INFO][isUserInDBReturn]  Query succeeded.
+[2021/03/19 18:11:15][INFO][isUserInDBReturn]  Retrieved user: (26,finalaccount@uci.edu )
+[2021/03/19 18:11:15][INFO][isUserInDBReturn]  Email in database, Returning USER
