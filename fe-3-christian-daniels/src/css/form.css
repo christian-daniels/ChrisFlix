@@ -1,0 +1,239 @@
+.form-input {
+  padding: 7px;
+  width: 300px;
+
+  border-style: none;
+  border-radius: 3px;
+
+  font-size: 18px;
+  box-shadow: inset 0px 0px 5px -2px #000000;
+  background-color: #fafafa;
+}
+.form-input-movie {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+  width: 40px;
+  border-style: none;
+  border-radius: 3px;
+  text-align: right;
+  font-size: 16px;
+  box-shadow: inset 0px 0px 5px -2px #000000;
+  background-color: #fafafa;
+}
+.form-button-smaller {
+  display: flex;
+  justify-content: center;
+
+  
+  width: 110px;
+  padding: 4px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 16px;
+
+  background-color: var(--background-color);
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+.form-button-remove {
+  display: flex;
+  justify-content: center;
+
+  
+  width: 30px;
+  padding: 4px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 20px;
+
+  background-color: var(--background-color);
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+.form-label {
+  margin: 20px 0px 0px 0px;
+  display: flex;
+  font-size: 20px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 25px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 3px;
+  border-style: none;
+
+  font-size: 20px;
+
+  background-color: var(--background-color);
+  box-shadow: inset 0px 0px 5px -2px #000000;
+}
+
+
+
+.form-box {
+  width: 90vw;
+  height: 50vh;
+  margin: 20px;
+  padding: 20px;
+
+  border-radius: 5px;
+  border: solid 3px var(--detail-color);
+  box-shadow: 0px 0px 5px -2px #000000;
+}
+
+.form-cart-box {
+  height: 10vh;
+  margin: 20px;
+  padding: 20px;
+}
+
+.form-box-search {
+  width: 90vw;
+  height: auto;
+  margin: 20px;
+  padding: 20px;
+
+  border-radius: 5px;
+  border: solid 3px var(--detail-color);
+  box-shadow: 0px 0px 5px -2px #000000;
+  
+}
+.form-box-browse {
+  width: 90vw;
+  height: auto;
+  margin: 20px;
+  padding: 20px;
+
+  border-radius: 5px;
+  border: solid 3px var(--detail-color);
+  box-shadow: 0px 0px 5px -2px #000000;
+  
+}
+.form-box-results {
+  width: 90vw;
+  height: auto;
+  margin: 20px;
+  padding: 20px;
+
+  border-radius: 5px;
+  border: solid 3px var(--detail-color);
+  box-shadow: 0px 0px 5px -2px #000000;
+  
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+
+table {
+  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-custom {
+  display: flex;
+  flex-direction: column;
+  
+  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+ 
+  
+}
+p {
+  text-align: center;
+}
+
+.img-thumbnail{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.img-detail{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+}
+
+
+.thing {
+  text-align: center;
+}
+.thing2 {
+  text-align: center;
+}
+
+.something{
+  display: inline;
+}
+.container{
+  align-items: center;
+}
+.container-custom{
+  background-color: rgba(255, 255, 255, 0.5);
+  
+}
+
+.dropbtn {
+  background-color: #868686;
+  color: white;
+  padding: 2px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #868686;
+}
