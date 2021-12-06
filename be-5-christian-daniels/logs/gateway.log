@@ -1,0 +1,77 @@
+[2021/03/19 09:22:53][CONFIG][initService]  Starting service...
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Scheme: http://
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Port: 12345
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Path: /api/g
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database hostname: localhost
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database port: 3306
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database username: root
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database password provided? true
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database name: gateway
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  IDM Scheme: http://
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  IDM Hostname: 0.0.0.0
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  IDM Port: 12346
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  IDM Path: /api/idm
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  IDM Endpoints: 
+	/register
+	/login
+	/session
+	/privilege
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Movies Scheme: http://
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Movies Hostname: 0.0.0.0
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Movies Port: 12347
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Movies Path: /api/movies
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Movies Endpoints: 
+	/search
+	/browse/
+	/get/
+	/thumbnail
+	/people
+	/people/search
+	/people/get/
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Billing Scheme: http://
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Billing Hostname: 0.0.0.0
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Billing Port: 12348
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Billing Path: /api/billing
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Billing Endpoints: 
+	/cart/insert
+	/cart/update
+	/cart/delete
+	/cart/retrieve
+	/cart/clear
+	/order/place
+	/order/retrieve
+	/order/complete
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Number of Threads: 10
+[2021/03/19 09:22:53][CONFIG][currentConfigs]  Request Delay: 5
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Building URI from configs...
+[2021/03/19 09:22:53][INFO][run]  Worker thread 6 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 9 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 4 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 1 started.
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][INFO][run]  Worker thread 5 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 0 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 8 started.
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][INFO][run]  Worker thread 3 started.
+[2021/03/19 09:22:53][INFO][run]  Worker thread 2 started.
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][INFO][run]  Worker thread 7 started.
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][WARNING][takeRequest]  Attemping to take request
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:12345/api/g
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Set Jersey resources.
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2021/03/19 09:22:53][CONFIG][initHTTPServer]  Starting HTTP server...
+[2021/03/19 09:22:54][CONFIG][initHTTPServer]  HTTP server started.
+[2021/03/19 09:22:54][CONFIG][initService]  Service initialized.
