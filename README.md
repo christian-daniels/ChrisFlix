@@ -1,5 +1,5 @@
 # ChrisFlix
-A system of backend servers and frontend UI needed to run a student made movie purchasing site.
+A system of microservices that combines backend and frontend techniques needed to run a student-made full stack movie purchasing site.
 
 ## Backend
 The backend consists of 4 services - accounts, movies, paypal transactions, and the gateway written in Java.
